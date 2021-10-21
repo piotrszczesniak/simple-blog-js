@@ -52,11 +52,11 @@ section .to-do-list .to-do-item--done {
 
 section .to-do-list .to-do-item .remove {
   position: absolute;
-  right: 5px;
+  right: 0;
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
-  padding: 5px;
+  padding: 16px;
   color: black;
   opacity: 1;
 }
