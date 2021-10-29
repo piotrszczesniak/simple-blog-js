@@ -6,6 +6,7 @@ let sorted = false
 const inputElement = document.querySelector('#input')
 const todoListElement = document.querySelector('.to-do-list')
 const sortBtn = document.querySelector('#sort')
+const searchBar = document.querySelector('.search-bar')
 
 // execute
 window.onload = function () {
@@ -14,9 +15,16 @@ window.onload = function () {
 
     // sort tasks
     sortBtn.addEventListener('click', () => sortTasks())
+
+    // search tasks
+    searchBar.addEventListener('input', (e) => searchTasks(e))
 }
 
 // declarations
+
+function searchTasks(e) {
+    console.log(e.target.value)
+}
 
 function sortTasks() {
     sortBtn.innerHTML = `${sorted ? 'Sort A to Z' : 'Sort Z to A'}`
