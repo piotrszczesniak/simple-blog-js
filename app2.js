@@ -20,10 +20,16 @@ window.onload = function () {
     searchBar.addEventListener('input', (e) => searchTasks(e))
 }
 
-// declarations
+// functions declaration
 
+// search tasks
 function searchTasks(e) {
-    console.log(e.target.value)
+    let searchPhrase = e.target.value
+    // console.log(searchPhrase)
+    toDoListSearched = toDoList.filter(
+        (item) => item.todo.includes(searchPhrase) === true
+    )
+    render(toDoListSearched)
 }
 
 function sortTasks() {
@@ -41,7 +47,7 @@ function sortTasks() {
     render()
 }
 
-// add new tast
+// add new task
 function addNewTask(inputValue) {
     todoListElement.innerHTML = ''
     let item = {
@@ -63,14 +69,15 @@ function addNewTask(inputValue) {
 }
 
 // render
-function render() {
+function render(items = toDoList) {
     // clear input and to do list
     inputElement.value = ''
     todoListElement.innerHTML = ''
 
-    toDoList = toDoList.filter((item) => item.removed === false)
+    items = toDoList.filter((item) => item.removed === false)
+    console.log(items)
 
-    toDoList.forEach((item) => {
+    items.forEach((item) => {
         todoListElement.insertAdjacentHTML(
             'beforeend',
             `<li class="${

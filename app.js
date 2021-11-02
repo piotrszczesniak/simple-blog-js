@@ -51,7 +51,6 @@ function sort() {
         } else if (itemA.todo > itemB.todo) {
             return ascendingOrder ? 1 : -1
         }
-
         return 0
     })
 
