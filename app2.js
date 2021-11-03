@@ -17,16 +17,17 @@ window.onload = function () {
     sortBtn.addEventListener('click', () => sortTasks())
 
     // search tasks
-    searchBar.addEventListener('input', (e) => searchTasks(e))
+    searchBar.addEventListener('input', (e) => {
+        searchPhrase = e.target.value
+        searchTasks(searchPhrase)
+    })
 }
 
 // functions declaration
 
 // search tasks
-function searchTasks(e) {
-    let searchPhrase = e.target.value
-    // console.log(searchPhrase)
-    toDoListSearched = toDoList.filter(
+function searchTasks(searchPhrase) {
+    let toDoListSearched = toDoList.filter(
         (item) => item.todo.includes(searchPhrase) === true
     )
     render(toDoListSearched)
@@ -57,11 +58,11 @@ function addNewTask(inputValue) {
         removed: false,
         markDone: function () {
             this.done = !this.done
-            render()
+            render(toDoListSearched)
         },
         markRemoved: function () {
             this.removed = true
-            render()
+            render(toDoListSearched)
         },
     }
     toDoList.push(item)
@@ -69,15 +70,14 @@ function addNewTask(inputValue) {
 }
 
 // render
-function render(items = toDoList) {
+function render(list = toDoList) {
     // clear input and to do list
     inputElement.value = ''
     todoListElement.innerHTML = ''
 
-    items = toDoList.filter((item) => item.removed === false)
-    console.log(items)
+    toDoListSearched = list.filter((item) => item.removed === false)
 
-    items.forEach((item) => {
+    toDoListSearched.forEach((item) => {
         todoListElement.insertAdjacentHTML(
             'beforeend',
             `<li class="${
