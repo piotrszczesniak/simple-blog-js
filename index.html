@@ -4,32 +4,53 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+        />
         <link rel="stylesheet" href="style.css" />
-        <title>My list</title>
+        <script src="/app.js" defer></script>
+        <title>Little blog</title>
     </head>
     <body>
-        <section>
-            <div class="to-do-wrapper">
-                <h1>My todo list:</h1>
+        <main class="main">
+            <article class="article">
+                <div class="article__content">
+                    <div class="article__author">
+                        <img
+                            src="https://64.media.tumblr.com/avatar_8305fe1b40f1_128.png"
+                            alt="Author image"
+                            class="author__img"
+                        />
+                        <span class="author__name">Piotr</span>
+                    </div>
 
-                <input id="input" type="text" />
-
-                <ul class="to-do-list"></ul>
-
-                <p class="to-dos-done"></p>
-
-                <input
-                    class="search-bar"
-                    type="search"
-                    name="filter"
-                    id="filter"
-                    placeholder="Search tasks"
-                />
-
-                <button id="sort">Sort A to Z</button>
-            </div>
-            <!-- <script src="app.js"></script> -->
-            <script src="app2.js"></script>
-        </section>
+                    <div>
+                        <h1>Blog post title</h1>
+                        <p>
+                            Lorem Ipsum is simply dummy text of the printing and
+                            typesetting industry. Lorem Ipsum has been the
+                            industry's standard dummy text ever since the 1500s,
+                            when an unknown printer took a galley of type and
+                            scrambled it to make a type specimen book. It has
+                            survived not only five centuries, but also the leap
+                            into electronic typesetting, remaining essentially
+                            unchanged. It was popularised in the 1960s with the
+                            release of Letraset sheets containing Lorem Ipsum
+                            passages, and more recently with desktop publishing
+                            software like Aldus PageMaker including versions of
+                            Lorem Ipsum.
+                        </p>
+                        <span>Nov 4, 2021</span>
+                    </div>
+                </div>
+                <div class="article__image">
+                    <img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZAYSoc4vl0KEyHpkEHDndkxbDLxAiqAZmGQ&usqp=CAU"
+                        alt="Article image"
+                    />
+                </div>
+            </article>
+        </main>
     </body>
 </html>

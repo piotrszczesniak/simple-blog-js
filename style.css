@@ -1,67 +1,29 @@
-@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css");
-body {
-  background-color: lightblue;
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
-section {
+body {
+  font-family: Roboto;
+}
+
+.article {
+  max-width: 600px;
+  margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
 }
 
-section #input,
-section input {
-  border-radius: 4px;
-  border: none;
-  font-size: 16px;
-  padding: 15px;
-  caret-color: aqua;
-  color: aqua;
-}
-
-section .to-do-list {
-  list-style: none;
-  padding-left: 0;
-}
-
-section .to-do-list .to-do-item {
-  position: relative;
-  background-color: #f2f2f2;
-  padding: 15px;
-  margin-bottom: 10px;
-  -webkit-transition: background-color 0.3s ease;
-  transition: background-color 0.3s ease;
-  border-radius: 4px;
-}
-
-section .to-do-list .to-do-item:hover {
-  cursor: pointer;
-}
-
-section .to-do-list .to-do-item:hover:not(.to-do-item--done) {
-  background-color: aqua;
-}
-
-section .to-do-list .to-do-item--done {
-  text-decoration: line-through;
-  opacity: 0.5;
-}
-
-section .to-do-list .to-do-item .remove {
-  position: absolute;
-  right: 0;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  padding: 16px;
-  color: black;
-  opacity: 1;
-}
-
-section .to-do-list .to-do-item i {
-  padding-right: 6px;
+.article__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 /*# sourceMappingURL=style.css.map */
